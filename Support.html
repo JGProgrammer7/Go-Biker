@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - GO BIKER</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <span class="logo">GO BIKER!</span>
+            <div class="header-buttons">
+                <button class="nav-btn" onclick="window.location.href='payments.html'">Payments</button>
+                <button class="nav-btn" onclick="window.location.href='support.html'">Support</button>
+                <button class="nav-btn" onclick="window.location.href='information.html'">Information</button>
+            </div>
+            <div class="header-buttons">
+                <button class="register-btn" onclick="window.location.href='register.html'">REGISTER NOW</button>
+                <button class="login-btn" onclick="window.location.href='login.html'">LOGIN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="support-section">
+            <h1>Soporte</h1>
+            <p>Estamos aquí para ayudarte. Contáctanos o revisa nuestras preguntas frecuentes.</p>
+
+            <!-- Formulario de contacto -->
+            <div class="contact-form">
+                <h2>Formulario de contacto</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Preguntas frecuentes -->
+            <div class="faq">
+                <h2>Preguntas frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Cómo puedo registrarme?</h3>
+                    <p>Haz clic en "REGISTER NOW" en la página principal y completa el formulario de registro.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué métodos de pago aceptan?</h3>
+                    <p>Aceptamos tarjetas de crédito, débito y PayPal.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo contacto al soporte?</h3>
+                    <p>Puedes usar el formulario de contacto en esta página o enviarnos un correo a soporte@gobiker.com.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Manejar el envío del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Obtener los datos del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Mostrar los datos en la consola (puedes enviarlos a un servidor aquí)
+            console.log('Nombre:', name);
+            console.log('Correo:', email);
+            console.log('Mensaje:', message);
+
+            alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+            document.getElementById('contact-form').reset(); // Limpiar el formulario
+        });
+    </script>
+</body>
+</html>

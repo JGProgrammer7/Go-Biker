@@ -1,0 +1,81 @@
+
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - GO BIKER</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header principal -->
+    <header class="main-header">
+        <div class="header-content">
+            <!-- Logo del sitio -->
+            <span class="logo">GO BIKER!</span>
+            <!-- Botones de navegación -->
+            <nav class="header-buttons">
+                <button class="nav-btn" onclick="window.location.href='payments.html'">Payments</button>
+                <button class="nav-btn" onclick="window.location.href='support.html'">Support</button>
+                <button class="nav-btn" onclick="window.location.href='information.html'">Information</button>
+            </nav>
+            <!-- Botones de registro y login -->
+            <div class="header-buttons">
+                <button class="register-btn" onclick="window.location.href='register.html'">REGISTER NOW</button>
+                <button class="login-btn" onclick="window.location.href='login.html'">LOGIN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección principal de pagos -->
+    <main>
+        <section class="hero-section">
+            <h1>Pagos</h1>
+            <p>Gestiona tus pagos de manera segura y rápida.</p>
+            <p>Confía en GO BIKER para llevarte a donde necesitas, con seguridad y confianza.</p>
+            <p>Únete a miles de usuarios satisfechos que ya disfrutan de nuestros servicios.</p>
+            
+            <!-- Formulario de pago de ejemplo -->
+            <div class="payment-form">
+                <h2>Realiza tu pago ahora</h2>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="card-number">Número de tarjeta:</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Fecha de expiración:</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Pagar ahora</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Manejar el envío del formulario de pago
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Obtener los datos del formulario
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Mostrar los datos en la consola (puedes enviarlos a un servidor aquí)
+            console.log('Número de tarjeta:', cardNumber);
+            console.log('Fecha de expiración:', expiryDate);
+            console.log('CVV:', cvv);
+
+            alert('¡Pago realizado con éxito! Gracias por confiar en GO BIKER.');
+            document.getElementById('payment-form').reset(); // Limpiar el formulario
+        });
+    </script>
+</body>
+</html>
